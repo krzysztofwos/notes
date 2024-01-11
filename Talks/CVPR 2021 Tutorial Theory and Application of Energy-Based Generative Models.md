@@ -4,7 +4,7 @@
 
 Energy-Based Models (EBMs) originate from the Gibbs distribution in statistical physics.
 
-![[CVPR 2021 Tutorial_ Theory and Application of Energy-Based Generative Models --- Part 1 Fundamentals 3-13 screenshot.png]]
+![[CVPR 2021 Tutorial Theory and Application of Energy-Based Generative Models --- Part 1 Fundamentals 3-13 screenshot.png]]
 
 The Langevin dynamics is a gradient-based MCMC method which consists of a gradient ascent term and a diffusion term
 
@@ -12,7 +12,7 @@ $$
 I_{t+\Delta t} = I_t + \frac{\Delta t}{2} \nabla I f_{\theta}(I_t) + \sqrt{\Delta t}\varepsilon_t \text{, } \varepsilon_t \sim \mathcal{N}(0, I)
 $$
 
-![[CVPR 2021 Tutorial_ Theory and Application of Energy-Based Generative Models --- Part 1 Fundamentals 7-57 screenshot.png]]
+![[CVPR 2021 Tutorial Theory and Application of Energy-Based Generative Models --- Part 1 Fundamentals 7-57 screenshot.png]]
 
 The [[Kullback-Leibler Divergence]] between two probability densities $p(x)$ and $q(x)$ is defined as the expectation of $\log \frac{p(x)}{q(x)}$ under the distribution $p(x)$. It usually appears in two scenarios:
 
@@ -27,20 +27,20 @@ The [[Kullback-Leibler Divergence]] between two probability densities $p(x)$ and
 
    The expectation under the data distribution can be approximated by averaging over training examples
 
-   ![[CVPR 2021 Tutorial_ Theory and Application of Energy-Based Generative Models --- Part 1 Fundamentals 9-54 screenshot.png]]
+   ![[CVPR 2021 Tutorial Theory and Application of Energy-Based Generative Models --- Part 1 Fundamentals 9-54 screenshot.png]]
 
 2. Variational approximation:
    Suppose there is a target distribution $p_{\text{target}}$, which is known up to normalizing constant.
 
    Suppose we want to approximate the target distribution by a distribution $q_{\phi}$ where $\phi$ are the learning parameters. We can find $\phi$ by minimizing the KL divergence between $q_{\phi}$ and $p_{\text{target}}$.
 
-   ![[CVPR 2021 Tutorial_ Theory and Application of Energy-Based Generative Models --- Part 1 Fundamentals 10-55 screenshot.png]]
+   ![[CVPR 2021 Tutorial Theory and Application of Energy-Based Generative Models --- Part 1 Fundamentals 10-55 screenshot.png]]
 
 In the MLE scenario, the learned model $p_{\theta}$ tends to cover all the modes of the target $p_{\text{data}}$ while in the scenario of variational approximation, the learned model $q_{\phi}$ tends to focus on some major modes of $p_{\text{target}}$ while ignoring the minor modes.
 
 The reason is that in the latter scenario the KL divergence is the expectation w.r.t. $q_{\phi}$.
 
-![[CVPR 2021 Tutorial_ Theory and Application of Energy-Based Generative Models --- Part 1 Fundamentals 12-3 screenshot.png]]
+![[CVPR 2021 Tutorial Theory and Application of Energy-Based Generative Models --- Part 1 Fundamentals 12-3 screenshot.png]]
 
 ## Maximum Likelihood Estimation
 
@@ -54,7 +54,7 @@ $$
 
 The gradient of the log-likelihood involves an expectation term which is analytically intractable. The expectation term comes from the derivative of the $\log Z(\theta)$, where $Z(\theta)$ is the intractable normalizing constant.
 
-![[CVPR 2021 Tutorial_ Theory and Application of Energy-Based Generative Models --- Part 1 Fundamentals 13-5 screenshot.png]]
+![[CVPR 2021 Tutorial Theory and Application of Energy-Based Generative Models --- Part 1 Fundamentals 13-5 screenshot.png]]
 
 The expectation term is intractable because $x$ is high-dimensional. If $x$ is a 100-by-100 grayscale image and each pixel can take value from 0 to 255, the image space is too big to do summation over $x$ for computing the expectation according to the definition.
 
@@ -62,7 +62,7 @@ Therefore, it has to be approximated by Markov Chain Monte Carlo (MCMC) method s
 
 We can sample $\tilde{x}$ from the model distribution and use the sample average to approximate the expectation.
 
-![[CVPR 2021 Tutorial_ Theory and Application of Energy-Based Generative Models --- Part 1 Fundamentals 13-46 screenshot.png]]
+![[CVPR 2021 Tutorial Theory and Application of Energy-Based Generative Models --- Part 1 Fundamentals 13-46 screenshot.png]]
 
 ## Langevin Dynamics
 
@@ -74,7 +74,7 @@ The Langevin dynamics is a stochastic gradient ascent algorithm that updates the
 
 As the step size goes to zero and the number of steps goes to infinity, the distribution of $x_t$ will converge to the target distribution $p_{\theta}(x)$.
 
-![[CVPR 2021 Tutorial_ Theory and Application of Energy-Based Generative Models --- Part 1 Fundamentals 14-21 screenshot.png]]
+![[CVPR 2021 Tutorial Theory and Application of Energy-Based Generative Models --- Part 1 Fundamentals 14-21 screenshot.png]]
 
 ## Adversarial Interpretation
 
@@ -82,23 +82,23 @@ The update of parameters $\theta$ is based on the gradient of the log likelihood
 
 The learning and sampling algorithm algorithm play a [[Minimax]] game. In the learning step, the algorithm finds $\theta$ to maximize the value function $V$ and in the sampling step finds $\tilde{x}$ to maximize the score function $f_\theta$ thus minimizing the value function $V$.
 
-![[CVPR 2021 Tutorial_ Theory and Application of Energy-Based Generative Models --- Part 1 Fundamentals 17-8 screenshot.png]]
+![[CVPR 2021 Tutorial Theory and Application of Energy-Based Generative Models --- Part 1 Fundamentals 17-8 screenshot.png]]
 
 ---
 
 The [[Analysis by Synthesis]] learning algorithm is a mode-seeking and mode-shifting process.
 
-![[CVPR 2021 Tutorial_ Theory and Application of Energy-Based Generative Models --- Part 1 Fundamentals 18-11 screenshot.png]]
+![[CVPR 2021 Tutorial Theory and Application of Energy-Based Generative Models --- Part 1 Fundamentals 18-11 screenshot.png]]
 
 ## Equivalence Between EMBs and Discriminative Models
 
-![[CVPR 2021 Tutorial_ Theory and Application of Energy-Based Generative Models --- Part 1 Fundamentals 26-0 screenshot.png]]
+![[CVPR 2021 Tutorial Theory and Application of Energy-Based Generative Models --- Part 1 Fundamentals 26-0 screenshot.png]]
 
-![[CVPR 2021 Tutorial_ Theory and Application of Energy-Based Generative Models --- Part 1 Fundamentals 27-3 screenshot.png]]
+![[CVPR 2021 Tutorial Theory and Application of Energy-Based Generative Models --- Part 1 Fundamentals 27-3 screenshot.png]]
 
-![[CVPR 2021 Tutorial_ Theory and Application of Energy-Based Generative Models --- Part 1 Fundamentals 28-38 screenshot.png]]
+![[CVPR 2021 Tutorial Theory and Application of Energy-Based Generative Models --- Part 1 Fundamentals 28-38 screenshot.png]]
 
-![[CVPR 2021 Tutorial_ Theory and Application of Energy-Based Generative Models --- Part 1 Fundamentals 31-3 screenshot.png]]
+![[CVPR 2021 Tutorial Theory and Application of Energy-Based Generative Models --- Part 1 Fundamentals 31-3 screenshot.png]]
 
 # Part 2
 
@@ -106,7 +106,7 @@ The [[Analysis by Synthesis]] learning algorithm is a mode-seeking and mode-shif
 
 ## Diffusion-Based Modeling and Sampling
 
-![[CVPR 2021 Tutorial_ Theory and Application of Energy-Based Generative Models --- Part 2 Advanced 4-49 screenshot.png]]
+![[CVPR 2021 Tutorial Theory and Application of Energy-Based Generative Models --- Part 2 Advanced 4-49 screenshot.png]]
 
 We keep adding Gaussian noise to the image in a diffusion process. By adding more and more noise, we eventually arrive at a white noise image $\mathbf{x}_T$. At time step $t$, $\mathbf{x}_t$ is obtained by adding Gaussian noise $\sigma\epsilon_t$ of variance $\sigma^2$ to the image at time step $t - 1$. If we repeat this, this is the diffusion process $q(x_t|x_{t - 1})$. We want to learn an EBM for the images at all those noise levels, corresponding to all those time steps. The model is parameterized by a single network that is a function of both $x$ and $t$.
 
