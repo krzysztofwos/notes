@@ -36,3 +36,7 @@
 > Son, if you worry about why frocky do what they do, you'll drive yourself crazy.
 >
 > — [[Robert A. Heinlein]], _Citizen of the Galaxy_
+
+> All truth goes through three steps. First, it is ridiculed. Second, it is violently opposed, and finally it is accepted as self-evident.
+>
+> — Arthur Schopenhauer
