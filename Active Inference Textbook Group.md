@@ -6,7 +6,7 @@ Figure 7.10
 
 ![[Active Inference Textbook Figure 7.10.png]]
 
-Partially-Observable Markov (POM) model
+Partially-Observable Markov (POM) Model
 
 | Ontology Term                | Discrete Time | Description                                                                                                          |
 | ---------------------------- | ------------- | -------------------------------------------------------------------------------------------------------------------- |
@@ -22,3 +22,10 @@ Partially-Observable Markov (POM) model
 | Action<br>Active States      | a             |                                                                                                                      |
 | Generative Process           |               | Environment, the true probability distribution of raining or not                                                     |
 | Non-Equilibrium Steady State |               |                                                                                                                      |
+
+Features of the visual experience demonstrating that it is being generated
+
+- no blind spot
+- color in the periphery
+- resolution in the periphery
+- suppression of the saccades
