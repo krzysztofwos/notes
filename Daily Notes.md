@@ -1,3 +1,10 @@
+# Thursday, February 22, 2024
+
+Sakana AI Technical Problem Set:
+
+- Trained a model similar to T12 from Al-Rfou et al. 2018. Achieved BPC of 1.37 with 40.87M parameters.
+- Trained a baseline GPT model using Karpathy's nanoGPT repository. Achieved BPC of 1.57 with 12.95M parameters.
+
 # Thursday, February 15, 2024
 
 To Do:
